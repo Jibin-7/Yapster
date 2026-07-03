@@ -97,7 +97,7 @@ export default function Navbar() {
 
             {session?.user && (
               <button 
-                onClick={() => signOut()} 
+                onClick={() => signOut({ callbackUrl: '/login' })} 
                 className="p-2 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 text-gray-400 hover:text-red-500 transition-colors"
               >
                 <LogOut size={20} />
