@@ -45,14 +45,16 @@ export default async function ProfilePage(
     ]
   } : { visibility: { $ne: 'private' } };
 
+  const postCount = await Post.countDocuments({ author: id });
+
   // Fetch posts based on active tab
   let displayedPosts = [];
   if (activeTab === "replies") {
-    displayedPosts = await Post.find({ "comments.author": id, ...visibilityFilter }).sort({ createdAt: -1 }).lean();
+    displayedPosts = await Post.find({ "comments.author": id, ...visibilityFilter } as any).sort({ createdAt: -1 }).lean();
   } else if (activeTab === "likes") {
-    displayedPosts = await Post.find({ likes: id, ...visibilityFilter }).sort({ createdAt: -1 }).lean();
+    displayedPosts = await Post.find({ likes: id, ...visibilityFilter } as any).sort({ createdAt: -1 }).lean();
   } else {
-    displayedPosts = await Post.find({ author: id, ...visibilityFilter }).sort({ createdAt: -1 }).lean();
+    displayedPosts = await Post.find({ author: id, ...visibilityFilter } as any).sort({ createdAt: -1 }).lean();
   }
 
   const isOwnProfile = currentUserId === id;
@@ -81,7 +83,7 @@ export default async function ProfilePage(
         </Link>
         <div>
           <h2 className="font-bold text-xl text-gray-900 dark:text-white leading-tight">{profileUser.name}</h2>
-          <p className="text-sm text-gray-500 font-medium">{profileUser.posts?.length || 0} posts</p>
+          <p className="text-sm text-gray-500 font-medium">{postCount} posts</p>
         </div>
         </div>
       </div>

@@ -41,7 +41,9 @@ export async function POST(
 
     // Populate user info for the new comment
     const user = await User.findById(session.user.id).select('name image');
-    
+    if (!user) {
+      return NextResponse.json({ message: "User not found" }, { status: 404 });
+    }
     return NextResponse.json({ 
       message: "Comment added", 
       comment: {

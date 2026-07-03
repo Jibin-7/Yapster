@@ -31,8 +31,8 @@ export async function POST(
       return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
 
-    const isFollowing = currentUser.following.includes(targetUserId);
-    const hasRequested = targetUser.pendingFollowers.includes(currentUserId);
+    const isFollowing = currentUser.following.includes(targetUserId as any);
+    const hasRequested = targetUser.pendingFollowers.includes(currentUserId as any);
 
     let message = "";
     let state = "";
@@ -50,7 +50,7 @@ export async function POST(
       state = "none";
     } else {
       // Send Request
-      targetUser.pendingFollowers.push(currentUserId);
+      targetUser.pendingFollowers.push(currentUserId as any);
       message = "Follow requested";
       state = "requested";
     }

@@ -116,7 +116,7 @@ export default function ExplorePage() {
                     </div>
                   </div>
                   {session && (session.user as any)?.id !== user._id && (
-                    <FollowButton targetUserId={user._id} initialIsFollowing={isFollowing} />
+                    <FollowButton targetUserId={user._id} initialFollowState={isFollowing ? 'following' : 'none'} />
                   )}
                 </motion.div>
               );

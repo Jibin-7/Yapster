@@ -160,7 +160,9 @@ export default function PostCard({ post, session, onLike, onDelete, onEdit }: an
                 {post.author.name}
               </Link>
               {post.visibility === 'private' && (
-                <Lock size={12} className="text-discordPrimary" title="Followers Only" />
+                <span title="Followers Only" className="flex items-center">
+                  <Lock size={12} className="text-discordPrimary" />
+                </span>
               )}
               <span className="text-gray-500 text-sm">·</span>
               <span className="text-gray-500 text-sm hover:underline cursor-pointer">

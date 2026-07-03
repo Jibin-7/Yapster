@@ -31,7 +31,7 @@ export async function POST(
     if (hasLiked) {
       post.likes = post.likes.filter((id: any) => id.toString() !== userId);
     } else {
-      post.likes.push(userId);
+      post.likes.push(userId as any);
     }
 
     await post.save();
