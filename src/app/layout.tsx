@@ -15,6 +15,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Yapster - Social Media",
   description: "A premium social media platform built with Next.js",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Yapster",
+  },
+};
+
+export const viewport = {
+  themeColor: "#000000",
 };
 
 import Providers from "./Providers";

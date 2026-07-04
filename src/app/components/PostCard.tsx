@@ -323,21 +323,21 @@ export default function PostCard({ post, session, onLike, onDelete, onEdit }: an
                   <div className="mb-4 space-y-4">
                     {comments.map((comment: any) => (
                       <div key={comment._id} className="flex gap-3">
-                        <Link href={`/profile/${comment.user._id}`} className="flex-shrink-0">
+                        <Link href={`/profile/${comment.author?._id}`} className="flex-shrink-0">
                           <img 
-                            src={comment.user.image || `https://ui-avatars.com/api/?name=${comment.user.name}&background=random`} 
-                            alt={comment.user.name} 
+                            src={comment.author?.image || `https://ui-avatars.com/api/?name=${comment.author?.name}&background=random`} 
+                            alt={comment.author?.name} 
                             referrerPolicy="no-referrer"
                             className="w-8 h-8 rounded-full object-cover hover:opacity-80"
                           />
                         </Link>
                         <div className="flex-1">
                           <div className="flex items-center gap-1.5">
-                            <Link href={`/profile/${comment.user._id}`} className="font-bold text-sm text-gray-900 dark:text-white hover:underline">
-                              {comment.user.name}
+                            <Link href={`/profile/${comment.author?._id}`} className="font-bold text-sm text-gray-900 dark:text-white hover:underline">
+                              {comment.author?.name}
                             </Link>
                           </div>
-                          <p className="text-gray-800 dark:text-gray-200 text-[15px]">{comment.content}</p>
+                          <p className="text-gray-800 dark:text-gray-200 text-[15px]">{comment.text}</p>
                         </div>
                       </div>
                     ))}

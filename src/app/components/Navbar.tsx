@@ -114,6 +114,9 @@ export default function Navbar() {
             <Link href="/" className={`p-3 rounded-2xl transition-all ${isActive('/') ? 'text-discordPrimary' : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300'}`}>
               <Home size={24} className={isActive('/') ? 'fill-current' : ''} />
             </Link>
+            <Link href="/news" className={`p-3 rounded-2xl transition-all ${isActive('/news') ? 'text-discordPrimary' : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300'}`}>
+              <Newspaper size={24} className={isActive('/news') ? 'fill-current' : ''} />
+            </Link>
             <Link href="/explore" className={`p-3 rounded-2xl transition-all ${isActive('/explore') ? 'text-discordPrimary' : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300'}`}>
               <Compass size={24} className={isActive('/explore') ? 'fill-current' : ''} />
             </Link>

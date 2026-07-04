@@ -31,12 +31,12 @@ export async function POST(
     }
 
     const comment = {
-      user: session.user.id,
-      content,
+      author: session.user.id,
+      text: content,
       createdAt: new Date()
     };
 
-    post.comments.push(comment);
+    post.comments.push(comment as any);
     await post.save();
 
     // Populate user info for the new comment
@@ -49,7 +49,7 @@ export async function POST(
       comment: {
         ...comment,
         _id: post.comments[post.comments.length - 1]._id,
-        user: { _id: user._id, name: user.name, image: user.image }
+        author: { _id: user._id, name: user.name, image: user.image }
       } 
     });
   } catch (error) {
