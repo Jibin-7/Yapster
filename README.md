@@ -1,9 +1,9 @@
 <div align="center">
   <img src="https://ui-avatars.com/api/?name=Yapster&background=000&color=fff&size=100" alt="Yapster Logo" width="100" height="100" style="border-radius: 20px;" />
   
-  # Yapster
+  # Yapster | Real-Time Social Communication Platform
   
-  **A Premium, Real-Time Progressive Web Application**
+  **A mobile-first messaging and social platform with real-time interactions**
 
   [![Live Demo](https://img.shields.io/badge/Live_Demo-yapster--eta.vercel.app-000000?style=for-the-badge&logo=vercel)](https://yapster-eta.vercel.app)
   
@@ -18,13 +18,13 @@
 
 <br />
 
-## 🌟 Overview
+## Overview
 
-Yapster is a full-stack social media platform engineered from the ground up to showcase modern web development capabilities. Moving beyond standard CRUD applications, Yapster utilizes a decoupled client-server architecture to deliver instantaneous WebSocket communication, deep relational data mapping on a NoSQL database, and a highly responsive, physics-based user interface.
+Yapster is a full-stack social communication platform with real-time messaging and media sharing. Moving beyond standard CRUD applications, Yapster utilizes a decoupled client-server architecture to deliver instantaneous WebSocket communication, deep relational data mapping on a NoSQL database, and a highly responsive, responsive user interface.
 
 Most importantly, Yapster is a fully configured **Progressive Web App (PWA)**, allowing users to install the application natively on their iOS, Android, or Desktop devices directly from the browser.
 
-## ✨ Core Features
+## Core Features
 
 ### ⚡ Real-Time Engine (Pusher)
 Traditional social media platforms rely on inefficient HTTP polling. Yapster implements persistent WebSocket connections using Pusher. When a user sends a message or interacts with a post, the Node.js serverless API triggers an event that pushes the payload to the recipient's client in milliseconds, updating the React state without a page refresh.
@@ -41,7 +41,7 @@ Built on MongoDB and Mongoose, the database utilizes advanced Object Data Modeli
 ### ☁️ Optimized Media Delivery
 To prevent server bottlenecks and timeout errors, large image uploads bypass the Next.js API entirely. The client directly interfaces with the Cloudinary CDN via secure upload presets, processing the image at the edge and returning a lightweight URL string to MongoDB.
 
-## 🎨 UI & UX Design
+## Interface and Experience
 
 The user interface was constructed with a rigorous mobile-first methodology using **Tailwind CSS**. 
 
@@ -49,7 +49,7 @@ The user interface was constructed with a rigorous mobile-first methodology usin
 - **Adaptive Theming:** Deep integration of Tailwind's `dark:` variant ensures the application flawlessly respects the user's system color scheme preferences (Dark/Light mode) without hydration flickering.
 - **Micro-Animations:** Strategic implementation of **Framer Motion** adds physics-based spring animations to dropdowns, modals, and page transitions, elevating the perceived quality of the software.
 
-## 🏗️ System Architecture
+## System Architecture
 
 1. **Client Layer:** Next.js App Router utilizes React 18 Server Components for static layouts (maximizing SEO and FCP speed) while reserving the `"use client"` directive for highly interactive islands of state (like feeds and chat logs).
 2. **API Layer:** Next.js Serverless Functions (`/api/posts`, `/api/messages`) act as the secure bridge, processing raw HTTP requests.
